@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj": {}
+    "/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj": {}
   },
   "projects": {
-    "/home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj": {
+    "/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj",
+        "projectUniqueName": "/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj",
         "projectName": "LojaAsp",
-        "projectPath": "/home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj",
+        "projectPath": "/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj",
         "packagesPath": "/home/nodis/.nuget/packages/",
-        "outputPath": "/home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/obj/",
+        "outputPath": "/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/nodis/.nuget/NuGet/NuGet.Config"

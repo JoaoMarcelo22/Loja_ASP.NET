@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BR03NCYYMN+Oz8OTx0NH/3SZOJYBB5fpAl74MQHswM53RH1y4n6yOlacp5/p3hZbgY8aIYx7mB+u+zgMo0m5UQ==",
+  "dgSpecHash": "xBtiB1Zblob/0WiT/MMhuvbFFAwnR1r8dsltWKYr7S983gVnoSJeuECRd7E/3GgzHNFptxQXjwfM6SECVt/nhg==",
   "success": true,
-  "projectFilePath": "/home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj",
+  "projectFilePath": "/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj",
   "expectedPackageFiles": [
     "/home/nodis/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/nodis/.nuget/packages/microsoft.entityframeworkcore/6.0.5/microsoft.entityframeworkcore.6.0.5.nupkg.sha512",
