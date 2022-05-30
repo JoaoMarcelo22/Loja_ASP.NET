@@ -1,12 +1,13 @@
+using LojaAsp.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LojaAsp.Data
 {
     public class ProdutoContext : DbContext
     {
-        public ProdutoContext(DbContextOptions<ProdutoContext> opt) : base(opt)
+        public ProdutoContext(DbContextOptions<ProdutoContext> options) : base(options)
         {
         }
-        public DbSet<ProdutoContext>Produtos{get;set;}
+        public DbSet<Produto>Produtos{get;set;}
     }
 }
