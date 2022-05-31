@@ -19,55 +19,55 @@ namespace LojaAsp.Controllers
         }   
 
         [HttpPost]
-        public IActionResult AdicionarProduto([FromBody]CreateProdutoDto produtoDto)
+        public IActionResult AdicionarLoja([FromBody]CreateLojaDto lojaDto)
         {
-            Produto produto = _mapper.Map<Produto>(produtoDto);
+            Loja loja = _mapper.Map<Loja>(lojaDto);
             
-            _context.Produtos.Add(produto);
+            _context.Lojas.Add(loja);
             _context.SaveChanges();   
-            return CreatedAtAction(nameof(BuscarProdutoId), new { Id = produto.Id}, produto);
+            return CreatedAtAction(nameof(BuscarLojasId), new { Id = loja.Id}, loja);
         }
 
         [HttpGet]
-        public IEnumerable<Produto> BuscarProduto()
+        public IEnumerable<Loja> BuscarLoja()
         {
-            return _context.Produtos;
+            return _context.Lojas;
         }
 
         [HttpGet("{id}")]
-        public IActionResult BuscarProdutoId(int id)
+        public IActionResult BuscarLojasId(int id)
         {
-            Produto produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
-            if(produto != null)
+            Loja loja = _context.Lojas.FirstOrDefault(loja => loja.Id == id);
+            if(loja != null)
             {
-                ReadProdutoDto produtoDto = _mapper.Map<ReadProdutoDto>(produto);
-                return Ok(produtoDto);
+                ReadLojaDto lojaDto = _mapper.Map<ReadLojaDto>(loja);
+                return Ok(lojaDto);
             }
             return NotFound();
         }
 
         [HttpPut("{id}")]
-        public IActionResult EditarProduto(int id, [FromBody]UpdateProdutoDto produtoDto)
+        public IActionResult EditarLoja(int id, [FromBody]UpdateLojaDto lojaDto)
         {
-            Produto produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
-            if(produto == null)
+            Loja loja = _context.Lojas.FirstOrDefault(loja => loja.Id == id);
+            if(loja == null)
             {
                 NotFound();
             }
-            _mapper.Map(produtoDto,produto); // está sobrescrevendo o produco com o produto dto
+            _mapper.Map(lojaDto,loja); // está sobrescrevendo o produco com o produto dto
             _context.SaveChanges();
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeletarProduto(int id)
+        public IActionResult DeletarLoja(int id)
         {
-            Produto produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
-            if(produto == null )
+            Loja loja = _context.Lojas.FirstOrDefault(loja => loja.Id == id);
+            if(loja == null )
             {
                 NoContent();
             }
-            _context.Remove(produto);
+            _context.Remove(loja);
             _context.SaveChanges();
             return NoContent();
         }
