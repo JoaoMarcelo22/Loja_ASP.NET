@@ -16,8 +16,14 @@ namespace LojaAsp.Controllers
         }   
 
         [HttpPost]
-        public IActionResult AdicionarProduto([FromBody]Produto produto)
+        public IActionResult AdicionarProduto([FromBody]CreateProdutoDto produtoDto)
         {
+            Produto produto = new Produto
+            {
+                Nome = produtoDto.Nome,
+                Categoria = produtoDto.Categoria,
+                Preco = produtoDto.Preco
+            };
             _context.Produtos.Add(produto);
             _context.SaveChanges();   
             return CreatedAtAction(nameof(BuscarProdutoId), new { Id = produto.Id}, produto);
@@ -35,22 +41,30 @@ namespace LojaAsp.Controllers
             Produto produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
             if(produto != null)
             {
-                return Ok(produto);
+                ReadProdutoDto produtoDto = new ReadProdutoDto
+                {
+                    Nome = produto.Nome,
+                    Categoria = produto.Categoria,
+                    Preco = produto.Preco,
+                    Id = produto.Id,
+                    HoraDaConsulta = DateTime.Now
+                };
+                return Ok(produtoDto);
             }
             return NotFound();
         }
 
         [HttpPut("{id}")]
-        public IActionResult EditarProduto(int id, [FromBody]Produto produtoEditado)
+        public IActionResult EditarProduto(int id, [FromBody]UpdateProdutoDto produtoDto)
         {
             Produto produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
             if(produto == null)
             {
                 NoContent();
             }
-            produto.Nome = produtoEditado.Nome;
-            produto.Categoria = produtoEditado.Categoria;
-            produto.Preco = produtoEditado.Preco;
+            produto.Nome = produtoDto.Nome;
+            produto.Categoria = produtoDto.Categoria;
+            produto.Preco = produtoDto.Preco;
             _context.SaveChanges();
             return NoContent();
         }

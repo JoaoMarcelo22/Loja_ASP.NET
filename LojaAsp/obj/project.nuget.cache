@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "xBtiB1Zblob/0WiT/MMhuvbFFAwnR1r8dsltWKYr7S983gVnoSJeuECRd7E/3GgzHNFptxQXjwfM6SECVt/nhg==",
+  "dgSpecHash": "kf6yNcKrpPgV04xLex1KfBBn8rdGuOIaqT2DdQ/E91b5KhG5/NkkOnPFyvWZyBZKO7ywoWgoIAnBhn/dDH+s/Q==",
   "success": true,
   "projectFilePath": "/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/LojaAsp.csproj",
   "expectedPackageFiles": [
+    "/home/nodis/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
+    "/home/nodis/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "/home/nodis/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/home/nodis/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/nodis/.nuget/packages/microsoft.entityframeworkcore/6.0.5/microsoft.entityframeworkcore.6.0.5.nupkg.sha512",
     "/home/nodis/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.5/microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512",
     "/home/nodis/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.5/microsoft.entityframeworkcore.analyzers.6.0.5.nupkg.sha512",
