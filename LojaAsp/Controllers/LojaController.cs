@@ -1,3 +1,4 @@
+using AutoMapper;
 using LojaAsp.Data;
 using LojaAsp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -9,21 +10,19 @@ namespace LojaAsp.Controllers
     public class LojaController : ControllerBase
     {
         private ProdutoContext _context;
+        private IMapper _mapper;
 
-        public LojaController(ProdutoContext context)
+        public LojaController(ProdutoContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }   
 
         [HttpPost]
         public IActionResult AdicionarProduto([FromBody]CreateProdutoDto produtoDto)
         {
-            Produto produto = new Produto
-            {
-                Nome = produtoDto.Nome,
-                Categoria = produtoDto.Categoria,
-                Preco = produtoDto.Preco
-            };
+            Produto produto = _mapper.Map<Produto>(produtoDto);
+            
             _context.Produtos.Add(produto);
             _context.SaveChanges();   
             return CreatedAtAction(nameof(BuscarProdutoId), new { Id = produto.Id}, produto);
@@ -41,14 +40,7 @@ namespace LojaAsp.Controllers
             Produto produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
             if(produto != null)
             {
-                ReadProdutoDto produtoDto = new ReadProdutoDto
-                {
-                    Nome = produto.Nome,
-                    Categoria = produto.Categoria,
-                    Preco = produto.Preco,
-                    Id = produto.Id,
-                    HoraDaConsulta = DateTime.Now
-                };
+                ReadProdutoDto produtoDto = _mapper.Map<ReadProdutoDto>(produto);
                 return Ok(produtoDto);
             }
             return NotFound();
@@ -60,11 +52,9 @@ namespace LojaAsp.Controllers
             Produto produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
             if(produto == null)
             {
-                NoContent();
+                NotFound();
             }
-            produto.Nome = produtoDto.Nome;
-            produto.Categoria = produtoDto.Categoria;
-            produto.Preco = produtoDto.Preco;
+            _mapper.Map(produtoDto,produto); // está sobrescrevendo o produco com o produto dto
             _context.SaveChanges();
             return NoContent();
         }

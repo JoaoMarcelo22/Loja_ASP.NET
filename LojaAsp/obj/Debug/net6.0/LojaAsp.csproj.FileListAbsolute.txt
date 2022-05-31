@@ -33,3 +33,5 @@
 /home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/obj/Debug/net6.0/ref/LojaAsp.dll
 /home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/bin/Debug/net6.0/Npgsql.dll
 /home/nodis/Documentos/Estudo/Loja_Asp/Loja_ASP.NET/LojaAsp/bin/Debug/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/bin/Debug/net6.0/AutoMapper.dll
+/home/nodis/Documentos/Estudo/Loja_asp/Loja_ASP.NET/LojaAsp/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
