@@ -16,6 +16,7 @@ namespace LojaAsp
             _context = context;
             _mapper = mapper;
         }
+        [HttpPost]
         public IActionResult AdicionaGerente(CreateGerenteDto dto)
         {
             Gerente gerente = _mapper.Map<Gerente>(dto);
@@ -24,6 +25,7 @@ namespace LojaAsp
             return CreatedAtAction(nameof(RecuperaGerentesId),new { Id = gerente.Id},gerente);
         }
 
+        [HttpGet("{id}")]
         public IActionResult RecuperaGerentesId(int id)
         {
             Gerente gerente = _context.Gerentes.FirstOrDefault(gerente => gerente.Id == id);

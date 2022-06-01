@@ -15,7 +15,13 @@ namespace LojaAsp.Data
                 .HasOne(endereco => endereco.Loja)
                 .WithOne(loja=> loja.Endereco)
                 .HasForeignKey<Loja>(loja => loja.EnderecoID); // definição da foreignKey
+
+            builder.Entity<Loja>()
+                    .HasOne(Loja => Loja.Gerente)
+                    .WithMany(gerente => gerente.Lojas)
+                    .HasForeignKey(loja => loja.GerenteId);
         }
+
         public DbSet<Produto>Produtos{get;set;}
         public DbSet<Loja> Lojas{get;set;}
         public DbSet<Endereco> Enderecos{get;set;}

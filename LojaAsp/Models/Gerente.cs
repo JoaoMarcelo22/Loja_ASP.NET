@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using LojaAsp.Models;
 
 namespace LojaAsp
 {
@@ -8,5 +9,6 @@ namespace LojaAsp
        [Required] 
        public int Id{get;set;}
        public string Nome{get;set;}
+       public virtual List<Loja> Lojas{get;set;}
     }
 }
