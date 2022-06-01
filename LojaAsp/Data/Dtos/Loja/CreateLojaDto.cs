@@ -6,5 +6,7 @@ namespace LojaAsp
     {
         [Required(ErrorMessage ="Digite um nome ")]
         public string Nome { get; set; }
+
+        public int EnderecoId {get; set;}
     }
 }

@@ -7,7 +7,7 @@ namespace LojaAsp
     {
         public LojaProfile()
         {
-            CreateMap<CreateLojaDto, Produto>();
+            CreateMap<CreateLojaDto, Loja>();
             CreateMap<Loja, ReadLojaDto>();
             CreateMap<UpdateLojaDto, Loja>();
         }

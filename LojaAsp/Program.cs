@@ -10,9 +10,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<ProdutoContext>(options => {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("ProdutoConnection"));
+    options.UseLazyLoadingProxies().UseNpgsql(builder.Configuration.GetConnectionString("ProdutoConnection"));
 });
 
 var app = builder.Build();
